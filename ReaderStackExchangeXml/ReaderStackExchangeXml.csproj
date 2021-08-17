@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net5.0</TargetFramework>
+        <Title>Reader of StackExchange xml files</Title>
+        <Authors>Dmitry Tarakanov</Authors>
+        <Description>The library read data from xml files StackExchange and convert to model for database or another work</Description>
+        <PackageProjectUrl>https://github.com/dmitry575/ReaderStackExchangeXml</PackageProjectUrl>
+        <RepositoryUrl>https://github.com/dmitry575/ReaderStackExchangeXml</RepositoryUrl>
+        <PackageTags>StackExchange</PackageTags>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <Folder Include="Models" />
+    </ItemGroup>
+
+</Project>
