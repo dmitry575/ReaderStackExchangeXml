@@ -5,7 +5,7 @@ namespace ReaderStackExchangeXml.Models
 {
     [Serializable]
     [XmlRoot(ElementName = "row", IsNullable = true)]
-    public class Vote:BaseXmlModel
+    public class Vote : BaseXmlModel
     {
         [XmlElement(ElementName = "UserId", IsNullable = true)]
         public long? UserId { get; set; }

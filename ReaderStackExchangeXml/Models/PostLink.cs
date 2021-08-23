@@ -3,9 +3,12 @@ using System.Xml.Serialization;
 
 namespace ReaderStackExchangeXml.Models
 {
+    /// <summary>
+    /// Post links xml file
+    /// </summary>
     [Serializable]
     [XmlRoot(ElementName = "row", IsNullable = true)]
-    public class PostLink:BaseXmlModel
+    public class PostLink : BaseXmlModel
     {
         [XmlAttribute("CreationDate")]
         public DateTime CreationDate { get; set; }

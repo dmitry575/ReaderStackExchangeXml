@@ -5,9 +5,9 @@ namespace ReaderStackExchangeXml.Models
 {
     [Serializable]
     [XmlRoot(ElementName = "row", IsNullable = true)]
-    public class Tag:BaseXmlModel
+    public class Tag : BaseXmlModel
     {
-               [XmlAttribute("TagName")]
+        [XmlAttribute("TagName")]
         public string TagName { get; set; }
 
         [XmlAttribute("Count")]
