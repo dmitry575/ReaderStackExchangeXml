@@ -1,8 +1,9 @@
-﻿using System.Collections.Generic;
+﻿using ReaderStackExchangeXml.Models;
+using System.Collections.Generic;
 
 namespace ReaderStackExchangeXml
 {
-    public interface IReaderStackExchangeXml<out TModel> 
+    public interface IReaderStackExchangeXml<out TModel> where TModel : IModel
     {
         /// <summary>
         /// Reading from xml file rows

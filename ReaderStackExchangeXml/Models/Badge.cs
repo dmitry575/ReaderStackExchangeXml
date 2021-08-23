@@ -6,7 +6,7 @@ namespace ReaderStackExchangeXml.Models
 {
     [Serializable]
     [XmlRoot(ElementName = "row", IsNullable = true)]
-    public class Badge:BaseXmlModel
+    public class Badge : BaseXmlModel
     {
         [XmlAttribute("UserId")]
         public long UserId { get; set; }

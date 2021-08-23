@@ -5,10 +5,10 @@ namespace ReaderStackExchangeXml.Models
 {
     [Serializable]
     [XmlRoot(ElementName = "row", IsNullable = true)]
-    public class User:BaseXmlModel
+    public class User : BaseXmlModel
     {
 
-        [XmlAttribute("Reputation")] 
+        [XmlAttribute("Reputation")]
         public int Reputation { get; set; }
 
         [XmlAttribute("CreationDate")]
@@ -34,13 +34,13 @@ namespace ReaderStackExchangeXml.Models
 
         [XmlAttribute("UpVotes")]
         public int UpVotes { get; set; }
-        
+
         [XmlAttribute("DownVotes")]
         public int DownVotes { get; set; }
-        
+
         [XmlAttribute("AccountId")]
         public int AccountId { get; set; }
-        
+
         [XmlAttribute("ProfileImageUrl")]
         public string ProfileImageUrl { get; set; }
 

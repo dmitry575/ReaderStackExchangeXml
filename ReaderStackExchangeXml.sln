@@ -1,6 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReaderStackExchangeXml", "ReaderStackExchangeXml\ReaderStackExchangeXml.csproj", "{0043A34D-814D-4490-8733-B0AF7685E480}"
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31605.320
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ReaderStackExchangeXml", "ReaderStackExchangeXml\ReaderStackExchangeXml.csproj", "{0043A34D-814D-4490-8733-B0AF7685E480}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReaderStackExchangeXml.Tests", "ReaderStackExchangeXml.Tests\ReaderStackExchangeXml.Tests.csproj", "{572D6F64-43AD-4CD0-9068-35C73229FFBD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -12,5 +17,15 @@ Global
 		{0043A34D-814D-4490-8733-B0AF7685E480}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0043A34D-814D-4490-8733-B0AF7685E480}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0043A34D-814D-4490-8733-B0AF7685E480}.Release|Any CPU.Build.0 = Release|Any CPU
+		{572D6F64-43AD-4CD0-9068-35C73229FFBD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{572D6F64-43AD-4CD0-9068-35C73229FFBD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{572D6F64-43AD-4CD0-9068-35C73229FFBD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{572D6F64-43AD-4CD0-9068-35C73229FFBD}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {16657867-FB2A-4B56-A51A-EB5AA2187A34}
 	EndGlobalSection
 EndGlobal
