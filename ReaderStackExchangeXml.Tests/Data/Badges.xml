@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<badges>
+  <row Id="1" UserId="5" Name="Student" Date="2010-07-28T19:09:00.243" Class="3" TagBased="False" />
+  <row Id="2" UserId="3" Name="Supporter" Date="2010-07-28T19:09:00.510" Class="3" TagBased="False" />
+  <row Id="3" UserId="4" Name="Supporter" Date="2010-07-28T19:09:00.527" Class="3" TagBased="False" />
+</badges>
