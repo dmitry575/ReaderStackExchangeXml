@@ -21,15 +21,15 @@ namespace ReaderStackExchangeXml.Tests.Ioc
         [TestCase(typeof(IReaderStackExchangeXml<PostLink>))]
         [TestCase(typeof(IReaderStackExchangeXml<Tag>))]
         [TestCase(typeof(IReaderStackExchangeXml<Vote>))]
-        public void CorrectRegistry(Type t, Type )
+        public void CorrectRegistry(Type t)
         {
             var serviceCollection = new ServiceCollection();
             serviceCollection.AddReaderStackXml();
 
             var serviceProvider = serviceCollection.BuildServiceProvider();
 
-            var user = serviceProvider.GetService(t);
-            Assert.AreNotEqual(user, null);
+            var reader = serviceProvider.GetService(t);
+            Assert.AreNotEqual(reader, null);
         }
     }
 }

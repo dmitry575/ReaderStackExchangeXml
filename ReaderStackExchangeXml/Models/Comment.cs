@@ -5,7 +5,7 @@ namespace ReaderStackExchangeXml.Models
 {
     [Serializable]
     [XmlRoot(ElementName = "row", IsNullable = true)]
-    public class Comment:BaseXmlModel
+    public class Comment : BaseXmlModel
     {
         [XmlAttribute("PostId")]
         public long PostId { get; set; }

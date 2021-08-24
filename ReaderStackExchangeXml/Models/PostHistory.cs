@@ -5,10 +5,10 @@ namespace ReaderStackExchangeXml.Models
 {
     [Serializable]
     [XmlRoot(ElementName = "row", IsNullable = true)]
-    public class PostHistory:BaseXmlModel
+    public class PostHistory : BaseXmlModel
     {
         [XmlAttribute("PostId")]
-        public long PostId{ get; set; }
+        public long PostId { get; set; }
 
         [XmlAttribute("UserId")]
         public long UserId { get; set; }
@@ -23,7 +23,7 @@ namespace ReaderStackExchangeXml.Models
         public DateTime CreationDate { get; set; }
 
         [XmlAttribute("Text")]
-        public string Text{ get; set; }
+        public string Text { get; set; }
 
         [XmlAttribute("Comment")]
         public string Comment { get; set; }
