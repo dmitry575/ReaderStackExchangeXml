@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<comments>
+  <row Id="1" PostId="23" Score="0" Text="Using /opt helps me keep track of the applications I've installed myself." CreationDate="2010-07-28T19:36:59.773" UserId="10" ContentLicense="CC BY-SA 2.5" />
+  <row Id="2" PostId="18" Score="0" Text="but popping in a live cd I already have isn't going to work huh?" CreationDate="2010-07-28T19:38:39.723" UserId="10" ContentLicense="CC BY-SA 2.5" />
+  <row Id="3" PostId="12" Score="2" Text="Yes, X forwarding works with windows. I have used it with [Cygwin/X](http://en.wikipedia.org/wiki/Cygwin/X), on Windows XP. Not the fastest or prettiest, but does work." CreationDate="2010-07-28T20:53:14.973" UserId="122" ContentLicense="CC BY-SA 2.5" />
+</comments>

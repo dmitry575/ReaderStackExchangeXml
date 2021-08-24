@@ -5,7 +5,7 @@ namespace ReaderStackExchangeXml.Models
 {
     [Serializable]
     [XmlRoot(ElementName = "row", IsNullable = true)]
-    public class Post: BaseXmlModel
+    public class Post : BaseXmlModel
     {
         [XmlAttribute("PostTypeId")]
         public int PostTypeId { get; set; }
@@ -25,7 +25,7 @@ namespace ReaderStackExchangeXml.Models
         [XmlAttribute("Body")]
         public string Body { get; set; }
 
-        [XmlAttribute("OwnerUserId")] 
+        [XmlAttribute("OwnerUserId")]
         public long OwnerUserId { get; set; }
 
         [XmlAttribute("LastEditorUserId")]
@@ -63,6 +63,6 @@ namespace ReaderStackExchangeXml.Models
 
         [XmlElement(ElementName = "ClosedDate", IsNullable = true)]
         public DateTime? ClosedDate { get; set; }
-        
+
     }
 }

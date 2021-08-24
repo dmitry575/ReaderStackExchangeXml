@@ -21,10 +21,10 @@ namespace ReaderStackExchangeXml
             }
 
             var reader = XmlReader.Create(fileName, new XmlReaderSettings
-                {
-                    Async = true,
-                    IgnoreWhitespace = true
-                }
+            {
+                Async = true,
+                IgnoreComments = true
+            }
             );
 
             while (await reader.ReadAsync())
