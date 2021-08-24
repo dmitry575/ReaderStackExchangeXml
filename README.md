@@ -18,7 +18,7 @@ dotnet add package ReaderStackExchangeXml
 First using
 -------------------
 
-```PowerShell
+```c#
 var reader = new ReaderStackExchangeXml<Post>();
 await foreach (var data = await reader.ReadAsync())
   {
