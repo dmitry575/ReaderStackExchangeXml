@@ -20,7 +20,7 @@ First using
 
 ```PowerShell
 var reader = new ReaderStackExchangeXml<Post>();
-while (var data = await reader.ReadAsync())
+await foreach (var data = await reader.ReadAsync())
   {
    Console.WriteLine($"{data.Id} {data.Title}");
   }
