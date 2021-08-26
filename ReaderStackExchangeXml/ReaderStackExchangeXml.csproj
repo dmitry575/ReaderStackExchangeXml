@@ -3,7 +3,7 @@
     <PropertyGroup>
         <TargetFramework>net5.0</TargetFramework>
         <PackageId>ReaderStackExchangeXml</PackageId>
-        <Version>1.0.3</Version>
+        <Version>1.0.4</Version>
         <Title>Reader of StackExchange xml files</Title>
         <Authors>Dmitry Tarakanov</Authors>
         <Description>The library read data from xml files StackExchange (stackexchange.com) and convert to model for database or another work</Description>
