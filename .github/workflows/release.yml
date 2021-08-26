@@ -2,27 +2,34 @@ on:
   push:
     tags:
     - "v[0-9]+.[0-9]+.[0-9]+"
+    branches:
+    - main
+
 
 jobs:
   build:
     runs-on: ubuntu-latest
     timeout-minutes: 15
     steps:
-    - name: Checkout
-      uses: actions/checkout@v2
-    - name: Set VERSION variable from tag
-      run: echo "VERSION=${GITHUB_REF/refs\/tags\/v/}" >> $GITHUB_ENV
+    - uses: actions/checkout@v2
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: 5.0.x
+    - name: Restore dependencies
+      run: dotnet restore
+
     - name: Build
-      run: dotnet build --configuration Release /p:Version=${VERSION}
+      run: dotnet build --configuration Release --no-restore
     - name: Test
-      run: dotnet test --configuration Release /p:Version=${VERSION} --no-build
+      run: dotnet test --configuration Release --no-build
     - name: Pack
-      run: dotnet pack --configuration Release /p:Version=${VERSION} --no-build --output .
+      run: dotnet pack --configuration Release --no-build --output .
     - name: Push
-      run: dotnet nuget push ReaderStackExchangeXml.${VERSION}.nupkg --source https://nuget.pkg.github.com/acraven/index.json --api-key ${GITHUB_TOKEN}
+      run: dotnet nuget push *.nupkg --source https://nuget.pkg.github.com/acraven/index.json --api-key ${GITHUB_TOKEN}
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
     - name: Push nuget.org
-      run: dotnet nuget push ReaderStackExchangeXml.${VERSION}.nupkg --api-key ${NUGET_TOKEN} --source https://api.nuget.org/v3/index.json
+      run: dotnet nuget push *.nupkg --api-key ${NUGET_TOKEN} --source https://api.nuget.org/v3/index.json
       env:
         NUGET_TOKEN: ${{ secrets.NUGET_TOKEN }}
