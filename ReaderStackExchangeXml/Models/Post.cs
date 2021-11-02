@@ -7,62 +7,122 @@ namespace ReaderStackExchangeXml.Models
     [XmlRoot(ElementName = "row", IsNullable = true)]
     public class Post : BaseXmlModel
     {
-        [XmlAttribute("PostTypeId")]
-        public int PostTypeId { get; set; }
+        [XmlAttribute("PostTypeId")] public int PostTypeId { get; set; }
 
-        [XmlAttribute("AcceptedAnswerId")]
-        public long AcceptedAnswerId { get; set; }
+        [XmlAttribute("AcceptedAnswerId")] public long AcceptedAnswerId { get; set; }
 
-        [XmlAttribute("CreationDate")]
-        public DateTime CreationDate { get; set; }
+        [XmlAttribute("CreationDate")] public DateTime CreationDate { get; set; }
 
-        [XmlAttribute("Score")]
-        public long Score { get; set; }
+        [XmlAttribute("Score")] public long Score { get; set; }
 
-        [XmlElement(ElementName = "ViewCount", IsNullable = true)]
+        [XmlIgnore]
         public long? ViewCount { get; set; }
 
-        [XmlAttribute("Body")]
+        [XmlAttribute("Body")] 
         public string Body { get; set; }
 
-        [XmlAttribute("OwnerUserId")]
+        [XmlAttribute("OwnerUserId")] 
         public long OwnerUserId { get; set; }
 
-        [XmlAttribute("LastEditorUserId")]
+        [XmlAttribute("LastEditorUserId")] 
         public long LastEditorUserId { get; set; }
 
-        [XmlElement(ElementName = "LastEditDate", IsNullable = true)]
+        [XmlIgnore]
         public DateTime? LastEditDate { get; set; }
 
-        [XmlAttribute("LastActivityDate")]
+        [XmlAttribute("LastActivityDate")] 
         public DateTime LastActivityDate { get; set; }
 
-        [XmlAttribute("Title")]
+        [XmlAttribute("Title")] 
         public string Title { get; set; }
 
-        [XmlAttribute("Tags")]
+        [XmlAttribute("Tags")] 
         public string Tags { get; set; }
 
-        [XmlAttribute("AnswerCount")]
+        [XmlAttribute("AnswerCount")] 
         public int AnswerCount { get; set; }
 
-        [XmlAttribute("CommentCount")]
+        [XmlAttribute("CommentCount")] 
         public int CommentCount { get; set; }
 
-        [XmlAttribute("FavoriteCount")]
+        [XmlAttribute("FavoriteCount")] 
         public int FavoriteCount { get; set; }
 
-        [XmlAttribute("ContentLicense")]
+        [XmlAttribute("ContentLicense")] 
         public string ContentLicense { get; set; }
 
-        [XmlElement(ElementName = "ParentId", IsNullable = true)]
+        [XmlIgnore] 
         public int? ParentId { get; set; }
 
-        [XmlElement(ElementName = "CommunityOwnedDate", IsNullable = true)]
+        [XmlIgnore] 
         public DateTime? CommunityOwnedDate { get; set; }
 
-        [XmlElement(ElementName = "ClosedDate", IsNullable = true)]
+        [XmlIgnore] 
         public DateTime? ClosedDate { get; set; }
 
+        [XmlAttribute("ParentId")]
+        public string ParentIdStr
+        {
+            get => ParentId.HasValue ? ParentId.ToString() : string.Empty;
+            set
+            {
+                if (!string.IsNullOrEmpty(value) && int.TryParse(value, out var i))
+                {
+                    ParentId = i;
+                }
+            }
+        }
+        
+        [XmlAttribute("CommunityOwnedDate")] 
+        public string CommunityOwnedDateStr
+        {
+            get => CommunityOwnedDate.HasValue ? CommunityOwnedDate.ToString() : string.Empty;
+            set
+            {
+                if (!string.IsNullOrEmpty(value) && DateTime.TryParse(value, out var i))
+                {
+                    CommunityOwnedDate = i;
+                }
+            }
+        }
+        
+        [XmlAttribute("ClosedDate")] 
+        public string ClosedDateStr
+        {
+            get => ClosedDate.HasValue ? ClosedDate.ToString() : string.Empty;
+            set
+            {
+                if (!string.IsNullOrEmpty(value) && DateTime.TryParse(value, out var i))
+                {
+                    ClosedDate = i;
+                }
+            }
+        }
+
+        [XmlAttribute("ViewCount")]
+        public string ViewCountStr
+        {
+            get => ViewCount.HasValue ? ViewCount.ToString() : string.Empty;
+            set
+            {
+                if (!string.IsNullOrEmpty(value) && long.TryParse(value, out var i))
+                {
+                    ViewCount = i;
+                }
+            }
+        }
+
+        [XmlAttribute("LastEditDate")]
+        public string LastEditDateStr
+        {
+            get => LastEditDate.HasValue ? LastEditDate.ToString() : string.Empty;
+            set
+            {
+                if (!string.IsNullOrEmpty(value) && DateTime.TryParse(value, out var i))
+                {
+                    LastEditDate = i;
+                }
+            }
+        }
     }
 }

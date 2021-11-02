@@ -7,7 +7,7 @@ namespace ReaderStackExchangeXml.Models
     [XmlRoot(ElementName = "row", IsNullable = true)]
     public class Vote : BaseXmlModel
     {
-        [XmlElement(ElementName = "UserId", IsNullable = true)]
+        [XmlIgnore]
         public long? UserId { get; set; }
 
         [XmlAttribute("PostId")]
@@ -19,8 +19,34 @@ namespace ReaderStackExchangeXml.Models
         [XmlAttribute("CreationDate")]
         public DateTime CreationDate { get; set; }
 
-        [XmlElement(ElementName = "BountyAmount", IsNullable = true)]
+        [XmlIgnore]
         public int? BountyAmount { get; set; }
+
+        [XmlAttribute("BountyAmount")]
+        public string BountyAmountStr
+        {
+            get => BountyAmount.HasValue ? BountyAmount.ToString() : string.Empty;
+            set
+            {
+                if (!string.IsNullOrEmpty(value) && int.TryParse(value, out int i))
+                {
+                    BountyAmount = i;
+                }
+            }
+        }
+
+        [XmlAttribute("UserId")]
+        public string UserIdStr
+        {
+            get => UserId.HasValue ? UserId.ToString() : string.Empty;
+            set
+            {
+                if (!string.IsNullOrEmpty(value) && int.TryParse(value, out int i))
+                {
+                    UserId = i;
+                }
+            }
+        }
 
     }
 }

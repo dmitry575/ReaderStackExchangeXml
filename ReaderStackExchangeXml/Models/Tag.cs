@@ -21,6 +21,7 @@ namespace ReaderStackExchangeXml.Models
 
         [XmlIgnore]
         public int? WikiPostIdValue { get; set; }
+       
         [XmlAttribute("WikiPostId")]
         public int WikiPostId { get => WikiPostIdValue.HasValue ? WikiPostIdValue.Value : 0; set { WikiPostIdValue = value; } }
     }

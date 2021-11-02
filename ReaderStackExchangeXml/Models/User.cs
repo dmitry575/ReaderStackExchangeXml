@@ -17,7 +17,7 @@ namespace ReaderStackExchangeXml.Models
         [XmlAttribute("DisplayName")]
         public string DisplayName { get; set; }
 
-        [XmlElement(ElementName = "LastAccessDate", IsNullable = true)]
+        [XmlIgnore]
         public DateTime? LastAccessDate { get; set; }
 
         [XmlAttribute("WebsiteUrl")]
@@ -43,6 +43,19 @@ namespace ReaderStackExchangeXml.Models
 
         [XmlAttribute("ProfileImageUrl")]
         public string ProfileImageUrl { get; set; }
+
+        [XmlAttribute("LastAccessDate")]
+        public string LastAccessDateStr
+        {
+            get => LastAccessDate.HasValue ? LastAccessDate.ToString() : string.Empty;
+            set
+            {
+                if (!string.IsNullOrEmpty(value) && DateTime.TryParse(value, out DateTime i))
+                {
+                    LastAccessDate = i;
+                }
+            }
+        }
 
     }
 }
